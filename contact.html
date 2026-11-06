@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact Favour Shaibu." />
+    <title>Contact | Favour Shaibu</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+    <div class="bg-orbs" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a href="index.html" class="logo">Favour Shaibu</a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="nav-menu" class="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page">
+      <h1 class="page-title">Contact me</h1>
+      <p class="page-intro">Have a question or want to work together? Send me a message.</p>
+
+      <section class="contact-card glass" aria-labelledby="form-title">
+        <h2 id="form-title" class="sr-only">Contact form</h2>
+
+        <!-- novalidate turns off the browser's own checks so our JavaScript validation does the work -->
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" />
+            <p class="field-error" id="name-error" role="alert"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" autocomplete="email" />
+            <p class="field-error" id="email-error" role="alert"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" inputmode="numeric" autocomplete="tel" />
+            <p class="field-error" id="phone-error" role="alert"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+            <p class="field-error" id="message-error" role="alert"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send message</button>
+
+          <p id="form-success" class="form-success" role="status" hidden>Thank you! Your message has been sent.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Favour Shaibu. Built for COS 106, Miva Open University.</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
