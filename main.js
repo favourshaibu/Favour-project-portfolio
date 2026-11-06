@@ -166,3 +166,100 @@ if (taskForm) {
 
   renderTasks(); // draw the saved tasks when the page loads
 }
+
+// ===== Contact form validation =====
+const contactForm = document.querySelector("#contact-form");
+
+// Guard: only run on the contact page
+if (contactForm) {
+  const formSuccess = document.querySelector("#form-success");
+
+  // Each field has its input, its error paragraph, and a rule function.
+  // A rule returns an error message, or "" when the value is valid.
+  const fields = [
+    {
+      input: document.querySelector("#name"),
+      error: document.querySelector("#name-error"),
+      check: function (value) {
+        return value === "" ? "Please enter your name." : "";
+      },
+    },
+    {
+      input: document.querySelector("#email"),
+      error: document.querySelector("#email-error"),
+      check: function (value) {
+        if (value === "") return "Please enter your email address.";
+        // Pattern: text, an @, text, a dot, text, with no spaces
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(value) ? "" : "Enter a valid email, like name@example.com.";
+      },
+    },
+    {
+      input: document.querySelector("#phone"),
+      error: document.querySelector("#phone-error"),
+      check: function (value) {
+        if (value === "") return "Please enter your phone number.";
+        // Pattern: one or more digits from start to end, nothing else
+        const digitsOnly = /^\d+$/;
+        return digitsOnly.test(value) ? "" : "Phone number must contain digits only.";
+      },
+    },
+    {
+      input: document.querySelector("#message"),
+      error: document.querySelector("#message-error"),
+      check: function (value) {
+        return value === "" ? "Please enter a message." : "";
+      },
+    },
+  ];
+
+  // Validate one field and show or clear its error. Returns true when valid.
+  function validateField(field) {
+    const message = field.check(field.input.value.trim());
+    field.error.textContent = message;
+
+    if (message) {
+      field.input.setAttribute("aria-invalid", "true");
+    } else {
+      field.input.removeAttribute("aria-invalid");
+    }
+    return message === "";
+  }
+
+  // On submit: check every field, only proceed if all pass
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // stop the page from reloading
+
+    // map() checks every field so all errors show at once
+    const results = fields.map(validateField);
+    const allValid = results.every(function (isValid) {
+      return isValid;
+    });
+
+    if (allValid) {
+      contactForm.reset();
+      formSuccess.hidden = false;
+    } else {
+      formSuccess.hidden = true;
+      // Move focus to the first field with a problem
+      const firstInvalid = fields.find(function (field) {
+        return field.input.hasAttribute("aria-invalid");
+      });
+      firstInvalid.input.focus();
+    }
+  });
+
+  // Live feedback: check a field when the user leaves it,
+  // and re-check as they type once it has been marked invalid
+  fields.forEach(function (field) {
+    field.input.addEventListener("blur", function () {
+      validateField(field);
+    });
+    field.input.addEventListener("input", function () {
+      formSuccess.hidden = true;
+      if (field.input.hasAttribute("aria-invalid")) {
+        validateField(field);
+      }
+    });
+  });
+}
