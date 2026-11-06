@@ -715,3 +715,71 @@ tbody tr:hover {
     padding: 2rem;
   }
 }
+
+/* ===== Contact form ===== */
+.contact-card {
+  max-width: 640px;
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--gold);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 168, 95, 0.25);
+}
+
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: #e5737f;
+}
+
+#contact-form button[type="submit"] {
+  font: inherit;
+  cursor: pointer;
+}
+
+.form-success {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: #b9e6c4;
+  background: rgba(60, 160, 90, 0.18);
+  border: 1px solid rgba(120, 200, 145, 0.5);
+}
+
+@media (min-width: 768px) {
+  .contact-card {
+    padding: 2rem;
+  }
+}
