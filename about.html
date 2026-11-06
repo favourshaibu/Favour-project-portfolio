@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="About Favour Shaibu: education, skills, career goals, and interests." />
+    <title>About | Favour Shaibu</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+    <div class="bg-orbs" aria-hidden="true"></div>
+    <header class="site-header">
+      <a href="index.html" class="logo">Favour Shaibu</a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="nav-menu" class="nav-menu" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page">
+      <h1 class="page-title">About me</h1>
+
+      <!-- Intro video -->
+      <section class="about-section glass" aria-labelledby="video-title">
+        <h2 id="video-title">Meet me</h2>
+        <figure class="video-wrap glass-video">
+          <video controls preload="metadata" poster="images/video-poster.jpg">
+            <source src="media/intro.mp4" type="video/mp4" />
+            <track kind="captions" src="media/intro.vtt" srclang="en" label="English" />
+            Your browser does not support the video tag.
+          </video>
+          <figcaption>A short introduction: who I am, what I study, and where I'm headed.</figcaption>
+        </figure>
+      </section>
+
+      <!-- Education: uses a table -->
+      <section class="about-section glass" aria-labelledby="education-title">
+        <h2 id="education-title">Educational background</h2>
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only">
+              Educational background
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Institution</th>
+                <th scope="col">Qualification</th>
+                <th scope="col">Period</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Miva Open University</td>
+                <td>BSc Software Engineering</td>
+                <td>2026 to present</td>
+              </tr>
+              <tr>
+                <td>[Secondary school name]</td>
+                <td>[Certificate, e.g. WAEC / NECO]</td>
+                <td>[Start year] to [End year]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Career aspirations -->
+      <section class="about-section glass" aria-labelledby="aspirations-title">
+        <h2 id="aspirations-title">Career aspirations</h2>
+        <p>
+          I aim to become a proficient software engineer with a focus on creating innovative solutions that make a
+          positive impact. My goal is to contribute to open-source projects and continuously learn new technologies.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
