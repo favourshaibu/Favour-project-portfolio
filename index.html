@@ -3,23 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Favour Shaibu</title>
+    <meta
+      name="description"
+      content="Portfolio of Favour Shaibu, a BSc Software Engineering student at Miva Open University."
+    />
+    <title>Favour Shaibu | Student Portfolio</title>
+
+    <!-- External stylesheet shared by every page -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- defer: the script runs after the HTML has been parsed, so the elements it needs exist -->
+    <script src="main.js" defer></script>
   </head>
+
   <body>
-    <head>
-      <header><a href="#">Favour Shaibu</a></header>
-      <nav>
-        <div class="navigations">
-          <img src="" alt="" />
-        </div>
+    <!-- Header and navigation: same markup is reused on every page -->
+    <header class="site-header">
+      <a href="index.html" class="logo">Favour Shaibu</a>
+
+      <!-- Hamburger button: only visible on small screens (see CSS). JS toggles the menu. -->
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="nav-menu" class="nav-menu" aria-label="Main navigation">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Project</a></li>
-          <li><a href="#">Planner</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-    </head>
+    </header>
+
+    <main>
+      <!-- Hero section: text on the left, photo on the right (stacked on mobile) -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-text">
+          <p class="hero-welcome">Welcome to my portfolio</p>
+          <h1 id="hero-title">Hi, I'm Favour Shaibu</h1>
+          <p class="hero-bio">
+            I'm a BSc Software Engineering student at Miva Open University, interested in web development, programming,
+            artificial intelligence, and problem-solving. I'm working toward becoming a very skilled software engineer.
+          </p>
+          <div class="hero-actions">
+            <a href="projects.html" class="btn btn-primary">View my projects</a>
+            <a href="about.html" class="btn btn-outline">About me</a>
+          </div>
+        </div>
+
+        <figure class="hero-photo">
+          <img
+            src="media/images/favour-hero.jpg"
+            alt="Portrait of Favour Shaibu in a red blazer against a dark studio background"
+          />
+        </figure>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Favour Shaibu. Built for COS 106, Miva Open University.</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </footer>
   </body>
 </html>
